@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Sitemap Page Specific Styles */
+        .sitemap-container {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .sitemap-description {
+            margin-bottom: 2rem;
+        }
+
+        .sitemap-svg-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        /* SVG Styles */
+        #sitemap-svg {
+            width: 100%;
+            min-width: 800px;
+            height: auto;
+        }
+
+        .node rect {
+            fill: var(--neutral-200);
+            stroke: var(--neutral-400);
+            stroke-width: 2px;
+            rx: 5px;
+            ry: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .node rect:hover {
+            fill: var(--primary);
+            stroke: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .node text {
+            font-family: var(--font-primary);
+            font-size: 14px;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            pointer-events: none;
+            fill: var(--neutral-700);
+            transition: all 0.3s;
+        }
+
+        .node:hover text {
+            fill: var(--neutral-100);
+        }
+
+        .link path {
+            fill: none;
+            stroke: var(--neutral-400);
+            stroke-width: 2px;
+        }
+
+        .link-active path {
+            stroke: var(--primary);
+            stroke-width: 3px;
+        }
+
+        @media (max-width: 768px) {
+            #sitemap-svg {
+                min-width: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html" class="active">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <h1>Site Map</h1>
+            <p>This interactive diagram shows the structure of our Quality Education website. Click on any page to
+                navigate directly to it.</p>
+
+            <div class="sitemap-container">
+                <div class="sitemap-description">
+                    <h2>Website Structure</h2>
+                    <p>Our website is organized into several key sections to help you navigate our educational resources
+                        efficiently. The sitemap below provides a visual representation of how our pages are connected.
+                    </p>
+                </div>
+
+                <div class="sitemap-svg-container">
+                    <svg id="sitemap-svg" width="1000" height="600" viewBox="0 0 1000 600"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <!-- Main Structure Links -->
+                        <g class="link">
+                            <path d="M500,100 L500,150" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,200 L500,250" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,200 L300,250" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,200 L700,250" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M300,300 L150,350" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M300,300 L300,350" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M300,300 L450,350" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,300 L500,350" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M700,300 L550,350" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M700,300 L700,350" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M700,300 L850,350" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,300 L325,450" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,300 L425,450" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,300 L525,450" stroke-width="2"></path>
+                        </g>
+                        <g class="link">
+                            <path d="M500,300 L625,450" stroke-width="2"></path>
+                        </g>
+
+                        <!-- Splash Screen -->
+                        <a href="splash.html" tabindex="0" class="node" role="link" aria-label="Splash Screen">
+                            <rect x="450" y="50" width="100" height="50"></rect>
+                            <text x="500" y="75">Splash</text>
+                        </a>
+
+                        <!-- Home -->
+                        <a href="home.html" tabindex="0" class="node" role="link" aria-label="Home Page">
+                            <rect x="450" y="150" width="100" height="50"></rect>
+                            <text x="500" y="175">Home</text>
+                        </a>
+
+                        <!-- Main Sections -->
+                        <a href="volunteer.html" tabindex="0" class="node" role="link" aria-label="Volunteer Page">
+                            <rect x="250" y="250" width="100" height="50"></rect>
+                            <text x="300" y="275">Volunteer</text>
+                        </a>
+
+                        <a href="table.html" tabindex="0" class="node" role="link" aria-label="Programs Table Page">
+                            <rect x="450" y="250" width="100" height="50"></rect>
+                            <text x="500" y="275">Programs</text>
+                        </a>
+
+                        <a href="profile.html" tabindex="0" class="node" role="link" aria-label="User Profile Page">
+                            <rect x="650" y="250" width="100" height="50"></rect>
+                            <text x="700" y="275">Profile</text>
+                        </a>
+
+                        <!-- Secondary Pages -->
+                        <a href="content_ST1.html" tabindex="0" class="node" role="link"
+                            aria-label="Early Childhood Education Content">
+                            <rect x="100" y="350" width="100" height="50"></rect>
+                            <text x="150" y="375">Content ST1</text>
+                        </a>
+
+                        <a href="content_ST2.html" tabindex="0" class="node" role="link"
+                            aria-label="Higher Education Access Content">
+                            <rect x="250" y="350" width="100" height="50"></rect>
+                            <text x="300" y="375">Content ST2</text>
+                        </a>
+
+                        <a href="content_ST3.html" tabindex="0" class="node" role="link"
+                            aria-label="Teacher Training Content">
+                            <rect x="400" y="350" width="100" height="50"></rect>
+                            <text x="450" y="375">Content ST3</text>
+                        </a>
+
+                        <a href="feedback.html" tabindex="0" class="node" role="link" aria-label="Feedback Form">
+                            <rect x="450" y="350" width="100" height="50"></rect>
+                            <text x="500" y="375">Feedback</text>
+                        </a>
+
+                        <a href="content_ST4.html" tabindex="0" class="node" role="link"
+                            aria-label="Digital Learning Content">
+                            <rect x="500" y="350" width="100" height="50"></rect>
+                            <text x="550" y="375">Content ST4</text>
+                        </a>
+
+                        <a href="team.html" tabindex="0" class="node" role="link" aria-label="Team Page">
+                            <rect x="650" y="350" width="100" height="50"></rect>
+                            <text x="700" y="375">Team</text>
+                        </a>
+
+                        <a href="sitemap.html" tabindex="0" class="node" role="link" aria-label="Sitemap Page">
+                            <rect x="800" y="350" width="100" height="50"></rect>
+                            <text x="850" y="375">Sitemap</text>
+                        </a>
+
+                        <!-- Page Editors -->
+                        <a href="pageEditor_ST1.html" tabindex="0" class="node" role="link"
+                            aria-label="Page Editor Student 1">
+                            <rect x="275" y="450" width="100" height="50"></rect>
+                            <text x="325" y="475">Editor ST1</text>
+                        </a>
+
+                        <a href="pageEditor_ST2.html" tabindex="0" class="node" role="link"
+                            aria-label="Page Editor Student 2">
+                            <rect x="375" y="450" width="100" height="50"></rect>
+                            <text x="425" y="475">Editor ST2</text>
+                        </a>
+
+                        <a href="pageEditor_ST3.html" tabindex="0" class="node" role="link"
+                            aria-label="Page Editor Student 3">
+                            <rect x="475" y="450" width="100" height="50"></rect>
+                            <text x="525" y="475">Editor ST3</text>
+                        </a>
+
+                        <a href="pageEditor_ST4.html" tabindex="0" class="node" role="link"
+                            aria-label="Page Editor Student 4">
+                            <rect x="575" y="450" width="100" height="50"></rect>
+                            <text x="625" y="475">Editor ST4</text>
+                        </a>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

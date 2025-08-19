@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor ST2 - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page Editor Specific Styles */
+        .editor-container {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .editor-section {
+            margin-bottom: 3rem;
+        }
+        
+        .editor-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .code-block {
+            background-color: var(--neutral-700);
+            color: var(--neutral-100);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: monospace;
+            margin: 1.5rem 0;
+        }
+        
+        .implementation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .implementation-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .implementation-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .resource-card {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .resource-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .screenshot {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--neutral-300);
+        }
+        
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .design-card {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .design-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--neutral-300);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-left {
+            left: 0;
+        }
+        
+        .timeline-right {
+            left: 50%;
+        }
+        
+        .timeline-left::after {
+            right: -10px;
+        }
+        
+        .timeline-right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 1rem;
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        @media (max-width: 768px) {
+            .resource-list, .design-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <h1>Page Editor - Student 2</h1>
+            <p>Documentation of my contributions to the Quality Education website project, including the design system, home page, and programs table implementation.</p>
+            
+            <div class="editor-container">
+                <!-- Pages Created Section -->
+                <section class="editor-section">
+                    <h2>Pages Created</h2>
+                    <p>As the lead designer for the Quality Education website, I was responsible for creating the following:</p>
+                    
+                    <ul>
+                        <li><a href="style.css">Global CSS</a> - The design system and styling for the entire website</li>
+                        <li><a href="home.html">Home Page</a> - The main landing page after the splash screen</li>
+                        <li><a href="table.html">Programs Table</a> - Interactive table of educational programs</li>
+                        <li><a href="content_ST2.html">Higher Education Access</a> - Content page about higher education</li>
+                        <li><a href="Validation_ST2.html">Validation Page</a> - Validation Page</li>
+                    </ul>
+                    
+                    <img src="/assets/st2/1.png?height=400&width=600" alt="Screenshot of Home Page" class="screenshot">
+                </section>
+                
+                <!-- Design System Section -->
+                <section class="editor-section">
+                    <h2>Design System Development</h2>
+                    <p>Creating a cohesive design system was crucial for maintaining consistency across all pages of the website. The design system includes:</p>
+                    
+                    <div class="design-grid">
+                        <div class="design-card">
+                            <div class="design-icon">🎨</div>
+                            <h3>Color Palette</h3>
+                            <p>Based on SDG 4 colors with complementary neutrals</p>
+                        </div>
+                        
+                        <div class="design-card">
+                            <div class="design-icon">🔤</div>
+                            <h3>Typography</h3>
+                            <p>Roboto for headings and Open Sans for body text</p>
+                        </div>
+                        
+                        <div class="design-card">
+                            <div class="design-icon">🧩</div>
+                            <h3>Components</h3>
+                            <p>Reusable UI elements like cards, buttons, and forms</p>
+                        </div>
+                        
+                        <div class="design-card">
+                            <div class="design-icon">📱</div>
+                            <h3>Responsive Patterns</h3>
+                            <p>Layouts that adapt to different screen sizes</p>
+                        </div>
+                    </div>
+                    
+                    <h3>CSS Variables</h3>
+                    <p>I implemented CSS variables (custom properties) to make the design system flexible and maintainable:</p>
+                    
+                    <div class="code-block">
+                        <pre>
+:root {
+    --primary: #c5192d; /* SDG 4 Red */
+    --primary-dark: #a11526;
+    --secondary: #4c9f38; /* SDG Green */
+    --neutral-100: #ffffff;
+    --neutral-200: #f5f5f5;
+    --neutral-300: #e0e0e0;
+    --neutral-400: #9e9e9e;
+    --neutral-500: #616161;
+    --neutral-600: #424242;
+    --neutral-700: #212121;
+    --font-primary: "Roboto", Arial, sans-serif;
+    --font-secondary: "Open Sans", Arial, sans-serif;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 4px;
+    --transition: all 0.3s ease;
+}
+                        </pre>
+                    </div>
+                    
+                    <p>This approach allowed all team members to easily maintain consistent styling across their pages by referencing these variables.</p>
+                </section>
+                
+                <!-- Implementation Details Section -->
+                <section class="editor-section">
+                    <h2>Implementation Details</h2>
+                    
+                    <h3>Home Page</h3>
+                    <p>The home page was designed to provide an engaging introduction to the Quality Education initiative and guide users to key content areas:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Hero section with a clear value proposition and call-to-action</li>
+                        <li>Card-based grid layout for content page links with visual previews</li>
+                        <li>Key facts section highlighting important statistics about education</li>
+                        <li>Responsive design that adapts to different screen sizes</li>
+                    </ul>
+                    
+                    <h3>Programs Table</h3>
+                    <p>The programs table page presents complex information in an organized, interactive format:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Custom table styling with alternating row colors for readability</li>
+                        <li>Highlighted featured row to draw attention to key programs</li>
+                        <li>Tooltip functionality for column headers to provide additional context</li>
+                        <li>Responsive table design that works on mobile devices</li>
+                        <li>Consistent visual indicators (check/cross marks) for program features</li>
+                    </ul>
+                    
+                    <img src="/assets/st2/2.png?height=400&width=600" alt="Screenshot of Programs Table" class="screenshot">
+                    
+                    <h3>Higher Education Access Content Page</h3>
+                    <p>This content page builds on the established content template with some unique features:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Comparison table for traditional vs. innovative education models</li>
+                        <li>Statistical cards to highlight key data points</li>
+                        <li>Structured content with clear section hierarchy</li>
+                        <li>Internal navigation system consistent with other content pages</li>
+                    </ul>
+                </section>
+                
+                <!-- Development Process Section -->
+                <section class="editor-section">
+                    <h2>Development Process</h2>
+                    <p>The development of the website followed a structured process to ensure quality and consistency:</p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item timeline-left">
+                            <div class="timeline-content">
+                                <h3>Planning & Research</h3>
+                                <p>Researched SDG 4 goals, analyzed user needs, and defined the site structure</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-right">
+                            <div class="timeline-content">
+                                <h3>Design System Creation</h3>
+                                <p>Developed the color palette, typography, and component library</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-left">
+                            <div class="timeline-content">
+                                <h3>Core Pages Implementation</h3>
+                                <p>Built the global CSS, home page, and navigation structure</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-right">
+                            <div class="timeline-content">
+                                <h3>Feature Development</h3>
+                                <p>Created the programs table with interactive elements</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-left">
+                            <div class="timeline-content">
+                                <h3>Content Creation</h3>
+                                <p>Developed the Higher Education Access content page</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item timeline-right">
+                            <div class="timeline-content">
+                                <h3>Testing & Refinement</h3>
+                                <p>Tested across devices and refined the implementation</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Technical Challenges Section -->
+                <section class="editor-section">
+                    <h2>Technical Challenges</h2>
+                    
+                    <h3>Responsive Navigation</h3>
+                    <p>Creating a navigation system that worked well on both desktop and mobile devices was challenging. I addressed this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Using flexbox for the desktop navigation with appropriate spacing</li>
+                        <li>Implementing media queries to adapt the navigation on smaller screens</li>
+                        <li>Ensuring touch targets were large enough for mobile users</li>
+                        <li>Testing the navigation across different device sizes</li>
+                    </ul>
+                    
+                    <h3>Table Responsiveness</h3>
+                    <p>Tables are notoriously difficult to make responsive. For the Programs Table, I implemented several techniques:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Custom table styling that allows horizontal scrolling on small screens</li>
+                        <li>Prioritizing important columns for mobile viewing</li>
+                        <li>Using appropriate text wrapping and spacing for readability</li>
+                        <li>Adding visual cues to help users understand the table structure</li>
+                    </ul>
+                    
+                    <h3>Cross-Browser Compatibility</h3>
+                    <p>Ensuring consistent rendering across different browsers required careful attention to:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Using standardized CSS properties with appropriate fallbacks</li>
+                        <li>Testing in multiple browsers during development</li>
+                        <li>Addressing specific browser quirks with targeted CSS</li>
+                        <li>Balancing modern features with broad compatibility</li>
+                    </ul>
+                </section>
+                
+                <!-- Resources Used Section -->
+                <section class="editor-section">
+                    <h2>Resources and References</h2>
+                    <p>The following resources were instrumental in creating my pages:</p>
+                    
+                    <div class="resource-list">
+                        <div class="resource-card">
+                            <h4>UN Sustainable Development Goals</h4>
+                            <p>Official resources on SDG 4 for content and color schemes</p>
+                            <a href="https://sdgs.un.org/goals/goal4" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>A List Apart</h4>
+                            <p>Articles on responsive design and CSS architecture</p>
+                            <a href="https://alistapart.com/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Smashing Magazine</h4>
+                            <p>Resources on responsive tables and design systems</p>
+                            <a href="https://www.smashingmagazine.com/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Google Fonts</h4>
+                            <p>Source for the Roboto and Open Sans font families</p>
+                            <a href="https://fonts.google.com/" target="_blank">Visit Resource</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Reflection Section -->
+                <section class="editor-section">
+                    <h2>Reflection and Learning</h2>
+                    <p>Developing the design system and core pages for this project provided valuable learning experiences:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>The importance of establishing a solid design foundation before implementation</li>
+                        <li>Techniques for creating maintainable CSS using variables and consistent naming</li>
+                        <li>Strategies for making complex data presentations (like tables) accessible and responsive</li>
+                        <li>The value of documentation for team collaboration</li>
+                        <li>Balancing aesthetic design with functional user experience</li>
+                    </ul>
+                    
+                    <p>For future projects, I would like to explore CSS Grid in more depth for complex layouts and investigate CSS preprocessing tools like Sass to enhance the maintainability of large stylesheets.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

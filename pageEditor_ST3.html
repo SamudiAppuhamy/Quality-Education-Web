@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor ST3 - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page Editor Specific Styles */
+        .editor-container {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .editor-section {
+            margin-bottom: 3rem;
+        }
+        
+        .editor-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .code-block {
+            background-color: var(--neutral-700);
+            color: var(--neutral-100);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: monospace;
+            margin: 1.5rem 0;
+        }
+        
+        .implementation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .implementation-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .implementation-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .resource-card {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .resource-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .screenshot {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--neutral-300);
+        }
+        
+        .accessibility-checklist {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .accessibility-checklist h3 {
+            margin-top: 0;
+            color: var(--primary);
+            border-bottom: 1px solid var(--neutral-300);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .checklist-item .check {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .before, .after {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+        }
+        
+        .before h3, .after h3 {
+            margin-top: 0;
+            text-align: center;
+            border-bottom: 1px solid var(--neutral-300);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .before {
+            border-left: 5px solid var(--neutral-500);
+        }
+        
+        .after {
+            border-left: 5px solid var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .resource-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <h1>Page Editor - Student 3</h1>
+            <p>Documentation of my contributions to the Quality Education website project, focusing on UX design, accessibility, and interactive elements.</p>
+            
+            <div class="editor-container">
+                <!-- Pages Created Section -->
+                <section class="editor-section">
+                    <h2>Pages Created</h2>
+                    <p>As the UX specialist for the Quality Education website, I was responsible for designing and implementing the following pages:</p>
+                    
+                    <ul>
+                        <li><a href="feedback.html">Feedback Form</a> - Comprehensive form with various input types</li>
+                        <li><a href="team.html">Team Page</a> - Interactive team member cards with flip animation</li>
+                        <li><a href="content_ST3.html">Teacher Training</a> - Content page about teacher training initiatives</li>
+                        <li><a href="Validation_ST3.html">Validation Page</a> - Validation Page</li>
+                    </ul>
+                    
+                    <img src="/assets/st3/1.png?height=400&width=600" alt="Screenshot of Feedback Form" class="screenshot">
+                </section>
+                
+                <!-- Implementation Details Section -->
+                <section class="editor-section">
+                    <h2>Implementation Details</h2>
+                    
+                    <h3>Feedback Form</h3>
+                    <p>The feedback form was designed to collect comprehensive user input while maintaining a user-friendly experience. Key implementation features include:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Organized fieldsets with clear legends for logical grouping of form elements</li>
+                        <li>Diverse input types (text, email, checkbox, radio, select, date, etc.) to demonstrate form versatility</li>
+                        <li>Client-side validation with visual error indicators</li>
+                        <li>Custom styling for form elements to maintain design consistency</li>
+                        <li>Emoji-based rating system for intuitive feedback collection</li>
+                        <li>Character counter for text areas to guide user input</li>
+                    </ul>
+                    
+                    <div class="code-block">
+                        <pre>
+/* Form Validation Styling */
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border-color: #d32f2f;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+input:invalid + .error-message,
+textarea:invalid + .error-message,
+select:invalid + .error-message {
+    display: block;
+}
+                        </pre>
+                    </div>
+                    
+                    <h3>Team Page</h3>
+                    <p>The team page features interactive cards with a flip animation to showcase team members and their contributions. Implementation highlights include:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>3D card flip effect using CSS transforms and perspective</li>
+                        <li>Accessible implementation with keyboard navigation support</li>
+                        <li>Responsive grid layout that adapts to different screen sizes</li>
+                        <li>Consistent styling with the global design system</li>
+                        <li>Focus states for improved accessibility</li>
+                    </ul>
+                    
+                    <img src="/assets/st3/2.png?height=400&width=600" alt="Screenshot of Team Page" class="screenshot">
+                    
+                    <div class="code-block">
+                        <pre>
+/* Card Flip Animation */
+.member-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.member-front, 
+.member-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius);
+}
+
+.member-back {
+    transform: rotateY(180deg);
+}
+
+.team-member:hover .member-thumbnail,
+.team-member:focus-within .member-thumbnail {
+    transform: rotateY(180deg);
+}
+                        </pre>
+                    </div>
+                    
+                    <h3>Teacher Training Content Page</h3>
+                    <p>This content page follows the established content template with some unique features:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Framework grid to present different teacher training approaches</li>
+                        <li>Statistical cards to highlight key data points</li>
+                        <li>Consistent internal navigation with other content pages</li>
+                        <li>Responsive design with appropriate typography hierarchy</li>
+                    </ul>
+                </section>
+                
+                <!-- Accessibility Focus Section -->
+                <section class="editor-section">
+                    <h2>Accessibility Implementation</h2>
+                    <p>As the UX specialist, I placed special emphasis on making all my pages accessible to users with disabilities:</p>
+                    
+                    <div class="accessibility-checklist">
+                        <h3>Accessibility Features Implemented</h3>
+                        
+                        <div class="checklist-item">
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Semantic HTML</strong>
+                                <p>Used appropriate HTML elements (fieldset, legend, section, etc.) to provide structural meaning</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Keyboard Navigation</strong>
+                                <p>Ensured all interactive elements are accessible via keyboard, with visible focus states</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Form Labels</strong>
+                                <p>Properly associated labels with form controls for screen reader compatibility</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Color Contrast</strong>
+                                <p>Ensured sufficient contrast between text and background colors</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>Alternative Text</strong>
+                                <p>Added descriptive alt text for all images</p>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-item">
+                            <span class="check">✓</span>
+                            <div>
+                                <strong>ARIA Attributes</strong>
+                                <p>Used ARIA roles and attributes where appropriate to enhance accessibility</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Team Page Accessibility</h3>
+                    <p>The flip card design on the team page presented a particular accessibility challenge. I addressed this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Making the cards keyboard focusable with tabindex="0"</li>
+                        <li>Adding appropriate ARIA roles and labels</li>
+                        <li>Ensuring the flip animation works with keyboard focus (:focus-within)</li>
+                        <li>Providing sufficient color contrast on both sides of the card</li>
+                    </ul>
+                    
+                    <h3>Feedback Form Accessibility</h3>
+                    <p>For the feedback form, I implemented several accessibility enhancements:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Logical tab order following the visual layout</li>
+                        <li>Clear error messages for validation failures</li>
+                        <li>Required field indicators</li>
+                        <li>Grouped related inputs using fieldset and legend</li>
+                        <li>Added title attributes with additional instructions where needed</li>
+                    </ul>
+                </section>
+                
+                <!-- UX Improvements Section -->
+                <section class="editor-section">
+                    <h2>UX Improvements</h2>
+                    <p>I implemented several UX improvements across my pages to enhance the user experience:</p>
+                    
+                    <div class="before-after">
+                        <div class="before">
+                            <h3>Before</h3>
+                            <p>Basic form with standard HTML elements</p>
+                            <ul>
+                                <li>Default browser styling</li>
+                                <li>Limited visual feedback</li>
+                                <li>No guidance for users</li>
+                                <li>Single input types</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="after">
+                            <h3>After</h3>
+                            <p>Enhanced form with UX improvements</p>
+                            <ul>
+                                <li>Custom styling consistent with design system</li>
+                                <li>Visual feedback for interactions</li>
+                                <li>Helpful error messages and tooltips</li>
+                                <li>Diverse input methods (emoji ratings, etc.)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Micro-Interactions</h3>
+                    <p>I added subtle micro-interactions to improve engagement and provide feedback:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Hover effects on buttons and interactive elements</li>
+                        <li>Focus states for keyboard navigation</li>
+                        <li>Animation for the team card flip</li>
+                        <li>Visual feedback for form validation</li>
+                        <li>Transition effects for smoother user experience</li>
+                    </ul>
+                </section>
+                
+                <!-- Technical Challenges Section -->
+                <section class="editor-section">
+                    <h2>Technical Challenges</h2>
+                    
+                    <h3>3D Card Flip Animation</h3>
+                    <p>Implementing the 3D card flip effect while maintaining accessibility was challenging. I addressed this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Using CSS 3D transforms with appropriate perspective settings</li>
+                        <li>Ensuring both sides of the card were properly positioned</li>
+                        <li>Adding keyboard accessibility through focus states</li>
+                        <li>Testing across different browsers to ensure consistent behavior</li>
+                    </ul>
+                    
+                    <h3>Form Validation</h3>
+                    <p>Creating a form with client-side validation that was both functional and user-friendly required:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Balancing HTML5 validation with custom styling</li>
+                        <li>Providing clear, helpful error messages</li>
+                        <li>Ensuring validation didn't interfere with user experience</li>
+                        <li>Making validation accessible to screen readers</li>
+                    </ul>
+                    
+                    <h3>Responsive Design for Complex Elements</h3>
+                    <p>Ensuring the team cards and form elements worked well on all screen sizes required careful consideration:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Adapting grid layouts for smaller screens</li>
+                        <li>Ensuring form elements remained usable on mobile devices</li>
+                        <li>Maintaining the functionality of interactive elements across devices</li>
+                        <li>Testing on various screen sizes to verify the responsive behavior</li>
+                    </ul>
+                </section>
+                
+                <!-- Resources Used Section -->
+                <section class="editor-section">
+                    <h2>Resources and References</h2>
+                    <p>The following resources were instrumental in creating my pages:</p>
+                    
+                    <div class="resource-list">
+                        <div class="resource-card">
+                            <h4>Web Accessibility Initiative (WAI)</h4>
+                            <p>Guidelines and best practices for creating accessible web content</p>
+                            <a href="https://www.w3.org/WAI/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Nielsen Norman Group</h4>
+                            <p>Research and articles on user experience best practices</p>
+                            <a href="https://www.nngroup.com/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>CSS-Tricks</h4>
+                            <p>Tutorials on CSS animations and 3D transforms</p>
+                            <a href="https://css-tricks.com/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>UNESCO Teacher Training Resources</h4>
+                            <p>Content and statistics for the Teacher Training page</p>
+                            <a href="https://en.unesco.org/themes/teachers" target="_blank">Visit Resource</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Reflection Section -->
+                <section class="editor-section">
+                    <h2>Reflection and Learning</h2>
+                    <p>Working on the UX and accessibility aspects of this project has been a valuable learning experience:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Deepened my understanding of web accessibility principles and implementation</li>
+                        <li>Gained experience in creating engaging interactive elements with CSS</li>
+                        <li>Learned to balance visual design with usability and accessibility</li>
+                        <li>Improved my skills in form design and validation techniques</li>
+                        <li>Developed a better understanding of responsive design challenges</li>
+                    </ul>
+                    
+                    <p>For future projects, I would like to explore more advanced form validation techniques using JavaScript and implement more complex animations while maintaining accessibility standards. I also plan to learn more about ARIA roles and how to implement them effectively for complex interactive components.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

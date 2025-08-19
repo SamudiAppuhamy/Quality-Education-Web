@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor ST4 - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page Editor Specific Styles */
+        .editor-container {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .editor-section {
+            margin-bottom: 3rem;
+        }
+        
+        .editor-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .code-block {
+            background-color: var(--neutral-700);
+            color: var(--neutral-100);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: monospace;
+            margin: 1.5rem 0;
+        }
+        
+        .implementation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .implementation-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .implementation-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .resource-card {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .resource-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .screenshot {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--neutral-300);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-badge {
+            background-color: var(--neutral-200);
+            color: var(--neutral-700);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .process-steps {
+            counter-reset: step;
+            margin: 1.5rem 0;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .process-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--primary);
+            color: var(--neutral-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-card {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .resource-list, .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <h1>Page Editor - Student 4</h1>
+            <p>Documentation of my contributions to the Quality Education website project, focusing on technical implementation, interactive elements, and data visualization.</p>
+            
+            <div class="editor-container">
+                <!-- Pages Created Section -->
+                <section class="editor-section">
+                    <h2>Pages Created</h2>
+                    <p>As the technical developer for the Quality Education website, I was responsible for designing and implementing the following pages:</p>
+                    
+                    <ul>
+                        <li><a href="profile.html">User Profile</a> - Interactive profile page with various content sections</li>
+                        <li><a href="sitemap.html">SVG Sitemap</a> - Interactive visual representation of the site structure</li>
+                        <li><a href="content_ST4.html">Digital Learning</a> - Content page about digital learning technologies</li>
+                        <li><a href="Validation_ST4.html">Validation Page</a> - Validation Page</li>
+                    </ul>
+                    
+                    <img src="/assets/st4/1.png?height=400&width=600" alt="Screenshot of User Profile Page" class="screenshot">
+                </section>
+                
+                <!-- Technical Stack Section -->
+                <section class="editor-section">
+                    <h2>Technical Stack</h2>
+                    <p>For my contributions to the project, I utilized the following technologies:</p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">SVG</span>
+                        <span class="tech-badge">Responsive Design</span>
+                        <span class="tech-badge">CSS Grid</span>
+                        <span class="tech-badge">Flexbox</span>
+                        <span class="tech-badge">CSS Variables</span>
+                        <span class="tech-badge">CSS Transitions</span>
+                    </div>
+                    
+                    <p>I focused on using modern web standards while ensuring cross-browser compatibility and responsive behavior across all device sizes.</p>
+                </section>
+                
+                <!-- Implementation Details Section -->
+                <section class="editor-section">
+                    <h2>Implementation Details</h2>
+                    
+                    <h3>User Profile Page</h3>
+                    <p>The user profile page was designed to showcase a volunteer's information in an organized and visually appealing way:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Grid-based layout with sidebar and main content areas</li>
+                        <li>Interactive skill bars with percentage indicators</li>
+                        <li>Hover effects on cards to improve engagement</li>
+                        <li>Availability calendar with visual indicators</li>
+                        <li>Contact form with styled input elements</li>
+                        <li>Responsive design that adapts to different screen sizes</li>
+                    </ul>
+                    
+                    <div class="code-block">
+                        <pre>
+/* Skill Bar Implementation */
+.skill-bar {
+    height: 10px;
+    background-color: var(--neutral-300);
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 5px;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+                        </pre>
+                    </div>
+                    
+                    <h3>SVG Sitemap</h3>
+                    <p>The sitemap page features an interactive SVG diagram that visualizes the website structure:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Hand-coded SVG with proper semantic structure</li>
+                        <li>Interactive elements that link to corresponding pages</li>
+                        <li>Visual hover effects to indicate interactivity</li>
+                        <li>Responsive SVG that scales appropriately</li>
+                        <li>Accessible implementation with proper ARIA attributes</li>
+                    </ul>
+                    
+                    <img src="/assets/st4/2.pngheight=400&width=600" alt="Screenshot of SVG Sitemap" class="screenshot">
+                    
+                    <div class="code-block">
+                        <pre>
+/* SVG Interaction Styles */
+.node rect {
+    fill: var(--neutral-200);
+    stroke: var(--neutral-400);
+    stroke-width: 2px;
+    rx: 5px;
+    ry: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.node rect:hover {
+    fill: var(--primary);
+    stroke: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.node text {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    fill: var(--neutral-700);
+    transition: all 0.3s;
+}
+
+.node:hover text {
+    fill: var(--neutral-100);
+}
+                        </pre>
+                    </div>
+                    
+                    <h3>Digital Learning Content Page</h3>
+                    <p>This content page follows the established content template with unique features focused on digital learning:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Technology card grid with icons and descriptions</li>
+                        <li>Pros and cons comparison section with custom styling</li>
+                        <li>Statistical cards to highlight key data points</li>
+                        <li>Consistent internal navigation with other content pages</li>
+                        <li>Responsive design that works well on all devices</li>
+                    </ul>
+                </section>
+                
+                <!-- SVG Implementation Section -->
+                <section class="editor-section">
+                    <h2>SVG Implementation Process</h2>
+                    <p>Creating the interactive SVG sitemap was one of the most technically challenging aspects of my contribution. The process involved:</p>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <h3>Planning the Site Structure</h3>
+                            <p>I began by mapping out the complete website structure to understand the relationships between pages and create a logical visual hierarchy.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3>Designing the Visual Representation</h3>
+                            <p>I sketched different layout options for the sitemap, eventually settling on a top-down hierarchical structure that clearly shows the relationships between pages.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3>Hand-Coding the SVG</h3>
+                            <p>I manually coded the SVG elements, carefully positioning each node and connection path to create a clean, organized visualization.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3>Adding Interactivity</h3>
+                            <p>I implemented hover effects and clickable links to make the sitemap both informative and functional as a navigation tool.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3>Ensuring Accessibility</h3>
+                            <p>I added appropriate ARIA attributes and ensured keyboard navigability to make the SVG accessible to all users.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h3>Testing and Refinement</h3>
+                            <p>I tested the SVG across different browsers and devices, making adjustments to ensure consistent rendering and functionality.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Digital Learning Features Section -->
+                <section class="editor-section">
+                    <h2>Digital Learning Page Features</h2>
+                    <p>For the Digital Learning content page, I implemented several unique features to effectively communicate the topic:</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Technology Grid</h3>
+                            <p>Interactive grid of digital learning technologies with icons and descriptions, using CSS Grid for responsive layout.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>Pros & Cons Comparison</h3>
+                            <p>Side-by-side comparison of benefits and challenges of digital learning with custom styling and icons.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>Statistical Visualization</h3>
+                            <p>Visually appealing presentation of key statistics using styled cards and typography hierarchy.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>Content Organization</h3>
+                            <p>Logical structure with clear section headings and internal navigation for improved user experience.</p>
+                        </div>
+                    </div>
+                    
+                    <img src="/placeholder.svg?height=400&width=600" alt="Screenshot of Digital Learning Page" class="screenshot">
+                </section>
+                
+                <!-- Technical Challenges Section -->
+                <section class="editor-section">
+                    <h2>Technical Challenges</h2>
+                    
+                    <h3>SVG Responsiveness</h3>
+                    <p>Making the SVG sitemap responsive while maintaining clarity and functionality was challenging. I addressed this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Using viewBox attributes to enable proper scaling</li>
+                        <li>Implementing a scrollable container for smaller screens</li>
+                        <li>Testing across various device sizes to ensure usability</li>
+                        <li>Adjusting text size and spacing for readability at different scales</li>
+                    </ul>
+                    
+                    <h3>Complex Grid Layouts</h3>
+                    <p>The profile page required a complex layout that needed to be responsive. I solved this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Using CSS Grid for the main layout structure</li>
+                        <li>Implementing media queries to adjust the grid for different screen sizes</li>
+                        <li>Creating nested grids for more complex sections</li>
+                        <li>Testing thoroughly to ensure the layout remained functional at all breakpoints</li>
+                    </ul>
+                    
+                    <h3>Cross-Browser Compatibility</h3>
+                    <p>Ensuring consistent rendering and functionality across different browsers presented challenges, particularly with the SVG implementation:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Testing in multiple browsers to identify inconsistencies</li>
+                        <li>Using standardized attributes and properties where possible</li>
+                        <li>Implementing fallbacks for newer CSS features</li>
+                        <li>Addressing specific browser quirks with targeted CSS</li>
+                    </ul>
+                </section>
+                
+                <!-- Resources Used Section -->
+                <section class="editor-section">
+                    <h2>Resources and References</h2>
+                    <p>The following resources were instrumental in creating my pages:</p>
+                    
+                    <div class="resource-list">
+                        <div class="resource-card">
+                            <h4>SVG Essentials</h4>
+                            <p>Reference for SVG implementation and best practices</p>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>CSS Grid Layout</h4>
+                            <p>Tutorials and examples for complex grid layouts</p>
+                            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>UNESCO ICT in Education</h4>
+                            <p>Content and statistics for the Digital Learning page</p>
+                            <a href="https://en.unesco.org/themes/ict-education" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Web Accessibility Initiative</h4>
+                            <p>Guidelines for making SVG and interactive elements accessible</p>
+                            <a href="https://www.w3.org/WAI/" target="_blank">Visit Resource</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Reflection Section -->
+                <section class="editor-section">
+                    <h2>Reflection and Learning</h2>
+                    <p>Working on the technical aspects of this project has been a valuable learning experience:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Deepened my understanding of SVG implementation and interactivity</li>
+                        <li>Gained experience with complex CSS Grid layouts and responsive design</li>
+                        <li>Improved my skills in creating accessible interactive elements</li>
+                        <li>Learned techniques for organizing and presenting technical content effectively</li>
+                        <li>Developed a better understanding of cross-browser compatibility challenges</li>
+                    </ul>
+                    
+                    <p>For future projects, I would like to explore more advanced SVG animations and interactions, as well as implementing more complex data visualizations. I'm also interested in learning more about JavaScript integration to enhance the interactivity of web pages while maintaining accessibility standards.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

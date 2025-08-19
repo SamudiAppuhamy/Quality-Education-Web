@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator Page - Student 2</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Validation Page Specific Styles */
+        .validation-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .validation-main {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+        
+        .validation-sidebar {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .validation-section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 100px;
+        }
+        
+        .validation-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .validation-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--neutral-300);
+        }
+        
+        .student-header {
+            background-color: var(--primary);
+            color: var(--neutral-100);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .student-header h2 {
+            margin: 0;
+            color: var(--neutral-100);
+        }
+        
+        .top-level-ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .top-level-ul > li {
+            font-weight: 700;
+            margin-top: 1rem;
+            color: var(--primary);
+        }
+        
+        .top-level-ul ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .top-level-ul ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .go-to-top {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--neutral-100);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .go-to-top:hover {
+            background-color: var(--primary-dark);
+            text-decoration: none;
+            color: var(--neutral-100);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .validation-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .validation-sidebar {
+                position: static;
+                margin-bottom: 2rem;
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Student Header -->
+    <section class="student-header">
+        <div class="wrapper">
+            <h2>Student 2 - Lead Designer</h2>
+        </div>
+    </section>
+
+    <div class="wrapper validation-container">
+        <!-- Main content area -->
+        <main class="validation-main">
+            <!-- Home Page Validation -->
+            <section id="homeVal" class="validation-section">
+                <h2>Home Page Validation Report</h2>
+                <p>The Home page passed validation with no errors. As the central landing page for the website, I ensured that all HTML elements were semantically correct and properly structured. The responsive grid layout for the content cards was implemented with appropriate accessibility attributes, and all images include descriptive alt text.</p> 
+                <img src="/assets/st2/3.png?height=400&width=800" alt="Validation report for Home page" class="validation-image">
+                                
+                <h3>Back to Page Editor</h3>
+                <p><a href="pageEditor_ST2.html#home" class="back-link">Return to the Home page implementation details in my Page Editor</a></p>
+            </section>
+
+            <!-- Table Page Validation -->
+            <section id="tableVal" class="validation-section">
+                <h2>Programs Table Validation Report</h2>
+                <p>The Programs Table page validation was successful with only minor warnings related to the use of custom data attributes for tooltips. These warnings do not affect functionality and are acceptable for modern browsers. The table structure follows proper semantic HTML with appropriate headers and cell relationships, ensuring accessibility for screen readers.</p>
+                <img src="/assets/st2/4.png?height=400&width=800" alt="Validation report for Programs Table page" class="validation-image">
+                                
+                <h3>Back to Page Editor</h3>
+                <p><a href="pageEditor_ST2.html#table" class="back-link">Return to the Programs Table implementation details in my Page Editor</a></p>
+            </section>
+
+            <!-- Content Page Validation -->
+            <section id="contentVal" class="validation-section">
+                <h2>Higher Education Access Content Page Validation Report</h2>
+                <p>The Higher Education Access content page passed validation with no errors. The comparison table and statistical cards were implemented with proper HTML structure. All internal navigation links were correctly implemented, and the page follows a logical heading hierarchy for optimal accessibility. The responsive design elements were validated across multiple viewport sizes.</p>
+                <img src="/assets/st2/5.png?height=400&width=800" alt="Validation report for Higher Education Access page" class="validation-image">
+                                
+                <h3>Back to Page Editor</h3>
+                <p><a href="pageEditor_ST2.html#content" class="back-link">Return to the Higher Education Access implementation details in my Page Editor</a></p>
+            </section>
+
+            <a href="#top" class="go-to-top">Go to Top</a>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside class="validation-sidebar">
+            <h3>Core Pages Validation:</h3>
+
+            <ul class="top-level-ul">
+                <li>Student 1</li>
+                <ul> 
+                    <li><a href="splash.html">Splash page </a></li>
+                    <li><a href="volunteer.html">Volunteer page </a></li>
+                    <li><a href="content_ST1.html">Content page </a></li>
+                </ul>
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="#homeVal">Home page validation</a></li>
+                    <li><a href="#tableVal">Table page validation</a></li>
+                    <li><a href="#contentVal">Content page validation</a></li>
+                </ul>
+                <li>Student 3</li>
+                <ul>
+                    <li><a href="feedback.html">Feedback page </a></li>
+                    <li><a href="team.html">Team page </a></li>
+                    <li><a href="content_ST3.html">Content page </a></li>
+                </ul>
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="profile.html">Profile page </a></li>
+                    <li><a href="sitemap.html">Sitemap page </a></li>
+                    <li><a href="content_ST4.html">Content page </a></li>
+                </ul>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

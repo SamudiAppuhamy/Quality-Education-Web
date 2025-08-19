@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor ST1 - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Page Editor Specific Styles */
+        .editor-container {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .editor-section {
+            margin-bottom: 3rem;
+        }
+        
+        .editor-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .code-block {
+            background-color: var(--neutral-700);
+            color: var(--neutral-100);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: monospace;
+            margin: 1.5rem 0;
+        }
+        
+        .implementation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .implementation-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .implementation-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .resource-card {
+            background-color: var(--neutral-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .resource-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .screenshot {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--neutral-300);
+        }
+        
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .color-swatch {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .resource-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <h1>Page Editor - Student 1</h1>
+            <p>Documentation of my contributions to the Quality Education website project, including implementation details, design decisions, and technical challenges.</p>
+            
+            <div class="editor-container">
+                <!-- Pages Created Section -->
+                <section class="editor-section">
+                    <h2>Pages Created</h2>
+                    <p>As part of my contribution to the Quality Education website, I was responsible for designing and implementing the following pages:</p>
+                    
+                    <ul>
+                        <li><a href="splash.html">Splash Screen</a> - The initial loading page with animation</li>
+                        <li><a href="volunteer.html">Volunteer Page</a> - Information about volunteer opportunities</li>
+                        <li><a href="content_ST1.html">Early Childhood Education</a> - Content page about early childhood education</li>
+                        <li><a href="Validation_ST1.html">Validation Page</a> - Validation Page</li>
+                    </ul>
+                    
+                    <img src="/assets/st1/1.png?height=400&width=600" alt="Screenshot of Splash Screen" class="screenshot">
+                </section>
+                
+                <!-- Implementation Details Section -->
+                <section class="editor-section">
+                    <h2>Implementation Details</h2>
+                    
+                    <h3>Splash Screen</h3>
+                    <p>The splash screen was designed to create a visually engaging introduction to the website while the main content loads. Key implementation features include:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Automatic redirection to the home page after 4 seconds using meta refresh</li>
+                        <li>CSS animation for the loading spinner using keyframes</li>
+                        <li>Semi-transparent overlay on the background image for better text readability</li>
+                        <li>Responsive design that maintains visual appeal on all device sizes</li>
+                    </ul>
+                    
+                    <div class="code-block">
+                        <pre>
+/* CSS Animation for Loading Spinner */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #c5192d;
+    margin: 2rem auto;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+                        </pre>
+                    </div>
+                    
+                    <h3>Volunteer Page</h3>
+                    <p>The volunteer page was designed to showcase opportunities and provide social proof through reviews. Implementation highlights include:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Scrollable information section for volunteer programs</li>
+                        <li>Interactive dropdown for sorting volunteer opportunities</li>
+                        <li>Review cards with rating system</li>
+                        <li>Emoji-based feedback form for quick user input</li>
+                        <li>Responsive grid layout for different screen sizes</li>
+                    </ul>
+                    
+                    <img src="/assets/st1/2.png?height=400&width=600" alt="Screenshot of Volunteer Page" class="screenshot">
+                    
+                    <h3>Early Childhood Education Content Page</h3>
+                    <p>This content page provides comprehensive information about early childhood education with an emphasis on readability and navigation. Key features include:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Internal navigation system with anchor links</li>
+                        <li>"Go to top" floating button for easy navigation on long pages</li>
+                        <li>Pull quotes with custom styling to highlight important information</li>
+                        <li>Statistical cards to present key data points visually</li>
+                        <li>Responsive images with appropriate alt text for accessibility</li>
+                    </ul>
+                </section>
+                
+                <!-- Design Decisions Section -->
+                <section class="editor-section">
+                    <h2>Design Decisions</h2>
+                    
+                    <h3>Color Palette</h3>
+                    <p>I adhered to the global color palette defined in the style.css file, with a focus on using the primary red color (SDG 4 color) for emphasis and call-to-action elements:</p>
+                    
+                    <div class="color-palette">
+                        <div class="color-swatch" style="background-color: #c5192d;">Primary<br>#c5192d</div>
+                        <div class="color-swatch" style="background-color: #a11526;">Primary Dark<br>#a11526</div>
+                        <div class="color-swatch" style="background-color: #4c9f38;">Secondary<br>#4c9f38</div>
+                        <div class="color-swatch" style="background-color: #212121;">Neutral 700<br>#212121</div>
+                    </div>
+                    
+                    <h3>Typography</h3>
+                    <p>I used the established typography system with Roboto for headings and Open Sans for body text to maintain consistency across the site. I added custom styling for quotes and statistical information to create visual hierarchy.</p>
+                    
+                    <h3>User Experience Considerations</h3>
+                    <p>Several design decisions were made specifically to enhance user experience:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>The splash screen creates a memorable first impression while content loads</li>
+                        <li>The volunteer page uses a scrollable container to present a lot of information without overwhelming the user</li>
+                        <li>The content page includes a persistent navigation system to help users find specific information</li>
+                        <li>Interactive elements have hover states to provide visual feedback</li>
+                        <li>The "Go to top" button appears fixed on the screen to facilitate navigation on long pages</li>
+                    </ul>
+                </section>
+                
+                <!-- Technical Challenges Section -->
+                <section class="editor-section">
+                    <h2>Technical Challenges</h2>
+                    
+                    <h3>Responsive Design</h3>
+                    <p>Creating a fully responsive design that works well on all device sizes was challenging, particularly for the volunteer page with its complex layout. I addressed this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Using flexible grid layouts that adapt to different screen sizes</li>
+                        <li>Implementing media queries to adjust layouts on smaller screens</li>
+                        <li>Testing on multiple device sizes to ensure consistent user experience</li>
+                    </ul>
+                    
+                    <h3>Content Organization</h3>
+                    <p>Organizing the extensive content for the Early Childhood Education page in a way that was both comprehensive and accessible presented a challenge. I solved this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Creating a clear section structure with descriptive headings</li>
+                        <li>Implementing an internal navigation system with anchor links</li>
+                        <li>Using visual elements like images and stat cards to break up text</li>
+                        <li>Ensuring a logical flow of information from general concepts to specific examples</li>
+                    </ul>
+                    
+                    <h3>Animation Performance</h3>
+                    <p>Ensuring smooth animations, particularly for the splash screen loader, required optimization to prevent performance issues on lower-end devices. I addressed this by:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>Using CSS transforms and opacity for animations instead of more resource-intensive properties</li>
+                        <li>Keeping animations simple and purposeful</li>
+                        <li>Testing on various devices to ensure consistent performance</li>
+                    </ul>
+                </section>
+                
+                <!-- Resources Used Section -->
+                <section class="editor-section">
+                    <h2>Resources and References</h2>
+                    <p>The following resources were instrumental in creating my pages:</p>
+                    
+                    <div class="resource-list">
+                        <div class="resource-card">
+                            <h4>MDN Web Docs</h4>
+                            <p>Used for reference on HTML, CSS, and JavaScript best practices</p>
+                            <a href="https://developer.mozilla.org/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>UNESCO Education Resources</h4>
+                            <p>Source for accurate information on early childhood education</p>
+                            <a href="https://en.unesco.org/themes/education" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>CSS-Tricks</h4>
+                            <p>Reference for advanced CSS techniques like animations and layouts</p>
+                            <a href="https://css-tricks.com/" target="_blank">Visit Resource</a>
+                        </div>
+                        
+                        <div class="resource-card">
+                            <h4>Web Accessibility Initiative (WAI)</h4>
+                            <p>Guidelines for ensuring accessibility in web design</p>
+                            <a href="https://www.w3.org/WAI/" target="_blank">Visit Resource</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Reflection Section -->
+                <section class="editor-section">
+                    <h2>Reflection and Learning</h2>
+                    <p>Working on this project has been a valuable learning experience. Some key takeaways include:</p>
+                    
+                    <ul class="implementation-list">
+                        <li>The importance of planning page structure before implementation</li>
+                        <li>Techniques for organizing and presenting complex information effectively</li>
+                        <li>Advanced CSS skills for creating engaging user interfaces</li>
+                        <li>The value of consistent design systems across multiple pages</li>
+                        <li>Balancing visual appeal with accessibility and performance</li>
+                    </ul>
+                    
+                    <p>For future projects, I would like to explore more interactive elements using JavaScript and experiment with more advanced animation techniques to enhance user engagement while maintaining performance.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

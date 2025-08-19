@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Profile Page Specific Styles */
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .profile-sidebar {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 5px solid var(--primary);
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            color: var(--neutral-500);
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .profile-section {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .profile-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--neutral-300);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: var(--neutral-300);
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 5px;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .icons-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .interest-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .interest-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--neutral-200);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .icon:hover {
+            background-color: var(--primary);
+            color: var(--neutral-100);
+        }
+
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .calendar th,
+        .calendar td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--neutral-300);
+        }
+
+        .calendar th {
+            background-color: var(--primary);
+            color: var(--neutral-100);
+        }
+
+        .calendar .available {
+            background-color: #e8f5e9;
+        }
+
+        .calendar .unavailable {
+            background-color: #ffebee;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .contact-form button {
+            background-color: var(--primary);
+            color: var(--neutral-100);
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .contact-form button:hover {
+            background-color: var(--primary-dark);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <h1>Volunteer Profile</h1>
+
+            <div class="profile-container">
+                <!-- Profile Sidebar -->
+                <div class="profile-sidebar">
+                    <img src="/assets/profile.jpg?height=150&width=150" alt="Sarah Johnson" class="profile-avatar">
+                    <h2 class="profile-name">Sarah Johnson</h2>
+                    <p class="profile-title">Education Advocate & Volunteer</p>
+
+                    <div class="profile-section">
+                        <h3 class="section-title">Contact Details</h3>
+                        <table class="calendar">
+                            <tr>
+                                <th>Email</th>
+                                <td>sarah.johnson@email.com</td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td>+1 (555) 123-4567</td>
+                            </tr>
+                            <tr>
+                                <th>Location</th>
+                                <td>London, UK</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Profile Main Content -->
+                <div class="profile-main">
+                    <!-- Introduction Section -->
+                    <div class="profile-section">
+                        <h3 class="section-title">About Me</h3>
+                        <p>As a passionate advocate for quality education, I've dedicated the past 5 years to
+                            volunteering with educational initiatives worldwide. I believe that education is the most
+                            powerful tool we can use to change the world and create lasting positive impact.</p>
+                        <p>My background in teaching combined with international development experience allows me to
+                            contribute effectively to various education programs. I'm particularly interested in digital
+                            literacy and inclusive education approaches.</p>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="profile-section">
+                        <h3 class="section-title">Skills & Expertise</h3>
+
+                        <div class="skill-label">
+                            <span>Teaching</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+
+                        <div class="skill-label">
+                            <span>Curriculum Development</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+
+                        <div class="skill-label">
+                            <span>Digital Literacy Training</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+
+                        <div class="skill-label">
+                            <span>Cross-Cultural Communication</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Goals Section -->
+                    <div class="profile-section">
+                        <h3 class="section-title">Goals & Objectives</h3>
+                        <ul>
+                            <li>Complete 200+ volunteer hours in educational programs this year</li>
+                            <li>Develop curriculum materials for underserved communities</li>
+                            <li>Train at least 50 teachers in digital education techniques</li>
+                            <li>Contribute to at least three major educational initiatives in different regions</li>
+                        </ul>
+                    </div>
+
+                    <!-- Volunteering History -->
+                    <div class="profile-section">
+                        <h3 class="section-title">Volunteering Experience</h3>
+                        <ul>
+                            <li><strong>Digital Literacy Trainer</strong> - Taught basic computer skills to children in
+                                rural communities (2022-Present)</li>
+                            <li><strong>Classroom Assistant</strong> - Supported teachers in underserved schools with
+                                educational materials and tutoring (2020-2022)</li>
+                            <li><strong>Educational Content Creator</strong> - Developed learning resources for literacy
+                                programs (2019-2020)</li>
+                        </ul>
+                    </div>
+
+                    <!-- UN Goals I Support -->
+                    <div class="profile-section">
+                        <h3 class="section-title">UN Goals I Support</h3>
+                        <div class="icons-container">
+                            <div class="interest-icon">
+                                <div class="icon" title="Quality Education">📚</div>
+                                <span>Quality Education</span>
+                            </div>
+
+                            <div class="interest-icon">
+                                <div class="icon" title="Gender Equality">⚧️</div>
+                                <span>Gender Equality</span>
+                            </div>
+
+                            <div class="interest-icon">
+                                <div class="icon" title="Reduced Inequalities">🤝</div>
+                                <span>Reduced Inequalities</span>
+                            </div>
+
+                            <div class="interest-icon">
+                                <div class="icon" title="Partnerships">🤲</div>
+                                <span>Partnerships</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability Calendar -->
+                    <div class="profile-section">
+                        <h3 class="section-title">Availability Calendar</h3>
+                        <table class="calendar">
+                            <tr>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                            <tr>
+                                <td class="available">AM ✓</td>
+                                <td class="unavailable">AM ✗</td>
+                                <td class="available">AM ✓</td>
+                                <td class="available">AM ✓</td>
+                                <td class="unavailable">AM ✗</td>
+                                <td class="available">AM ✓</td>
+                                <td class="available">AM ✓</td>
+                            </tr>
+                            <tr>
+                                <td class="unavailable">PM ✗</td>
+                                <td class="available">PM ✓</td>
+                                <td class="available">PM ✓</td>
+                                <td class="unavailable">PM ✗</td>
+                                <td class="available">PM ✓</td>
+                                <td class="available">PM ✓</td>
+                                <td class="unavailable">PM ✗</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="profile-section">
+                        <h3 class="section-title">Contact Me</h3>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

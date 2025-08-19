@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Table Page Specific Styles */
+        .programs-container {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .programs-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .programs-logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 2rem;
+        }
+
+        .programs-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .programs-table th {
+            background-color: var(--primary);
+            color: var(--neutral-100);
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .programs-table th img {
+            width: 30px;
+            height: 30px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .programs-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--neutral-300);
+        }
+
+        .programs-table tr:nth-child(even) {
+            background-color: var(--neutral-200);
+        }
+
+        .programs-table tr:nth-child(odd) {
+            background-color: var(--neutral-100);
+        }
+
+        .programs-table tr:hover {
+            background-color: var(--neutral-300);
+        }
+
+        .programs-table .check {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .programs-table .cross {
+            color: var(--primary);
+        }
+
+        .program-link {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .program-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .featured-row {
+            background-color: rgba(197, 25, 45, 0.1) !important;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--neutral-700);
+            color: var(--neutral-100);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            white-space: nowrap;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html" class="active">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <h1>Educational Programs</h1>
+            <p>Explore our comprehensive range of educational programs designed to support quality education worldwide.
+                These programs address various aspects of SDG 4, from early childhood education to teacher training and
+                digital literacy.</p>
+
+            <div class="programs-container">
+                <div class="programs-header">
+                    <img src="/assets/logo.png?height=100&width=100" alt="Quality Education Programs Logo"
+                        class="programs-logo">
+                    <div>
+                        <h2>Global Education Initiatives</h2>
+                        <p>Comparing key features of our educational programs across different regions and focus areas.
+                        </p>
+                    </div>
+                </div>
+
+                <table class="programs-table">
+                    <thead>
+                        <tr>
+                            <th>Program Name</th>
+                            <th class="tooltip" data-tooltip="Geographic regions covered by the program">
+                                <img src="/assets/region.png?height=30&width=30" alt="Region Icon"> Region
+                            </th>
+                            <th class="tooltip" data-tooltip="Age groups targeted by the program">
+                                <img src="/assets/age-group.png?height=30&width=30" alt="Age Group Icon"> Age Group
+                            </th>
+                            <th class="tooltip" data-tooltip="Duration of the program">
+                                <img src="/assets/duration.webp?height=30&width=30" alt="Duration Icon"> Duration
+                            </th>
+                            <th class="tooltip" data-tooltip="Digital components included in the program">
+                                <img src="/assets/digital.png?height=30&width=30" alt="Digital Icon"> Digital Component
+                            </th>
+                            <th class="tooltip" data-tooltip="Teacher training included in the program">
+                                <img src="/assets/teacher.png?height=30&width=30" alt="Teacher Icon"> Teacher Training
+                            </th>
+                            <th class="tooltip" data-tooltip="Certification provided upon completion">
+                                <img src="/assets/certification.png?height=30&width=30" alt="Certification Icon">
+                                Certification
+                            </th>
+                            <th>Details</th>
+                            <th>My own </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="featured-row">
+                            <td>Global Literacy Initiative</td>
+                            <td>Africa, Asia</td>
+                            <td>5-12 years</td>
+                            <td>Ongoing</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Digital Classroom Project</td>
+                            <td>Global</td>
+                            <td>10-18 years</td>
+                            <td>2 years</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>Early Childhood Development</td>
+                            <td>South America</td>
+                            <td>0-5 years</td>
+                            <td>3 years</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>Teacher Excellence Program</td>
+                            <td>Europe, North America</td>
+                            <td>Adults</td>
+                            <td>1 year</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>STEM Education Initiative</td>
+                            <td>Global</td>
+                            <td>12-18 years</td>
+                            <td>Ongoing</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>Adult Literacy Campaign</td>
+                            <td>Africa, Asia</td>
+                            <td>Adults</td>
+                            <td>6 months</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>Inclusive Education Project</td>
+                            <td>Global</td>
+                            <td>All ages</td>
+                            <td>Ongoing</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td>Higher Education Access</td>
+                            <td>Global</td>
+                            <td>18+ years</td>
+                            <td>4 years</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td><a href="#" class="program-link">Learn More</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" style="text-align: center; font-style: italic;">Additional programs are
+                                being developed and will be added to this table soon.</td>
+                        </tr>
+                        <tr>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </tbody>
+                    <tr>
+                        <th>
+
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

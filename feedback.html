@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Quality Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Feedback Page Specific Styles */
+        .feedback-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feedback-form {
+            background-color: var(--neutral-100);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        fieldset {
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        legend {
+            padding: 0 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="datetime-local"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--border-radius);
+            font-family: var(--font-primary);
+            transition: var(--transition);
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        input[type="datetime-local"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(21, 162, 194, 0.2);
+        }
+
+        input:invalid,
+        textarea:invalid,
+        select:invalid {
+            border-color: #18557e;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        input:invalid+.error-message,
+        textarea:invalid+.error-message,
+        select:invalid+.error-message {
+            display: block;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        .checkbox-group input,
+        .radio-group input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .scrolling-list {
+            width: 100%;
+            height: 150px;
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--border-radius);
+            padding: 0.5rem;
+            overflow-y: auto;
+        }
+
+        .scrolling-list label {
+            display: block;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .scrolling-list label:hover {
+            background-color: var(--neutral-200);
+        }
+
+        .datalist-container {
+            position: relative;
+        }
+
+        .counter {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--neutral-500);
+        }
+
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .rating-option {
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .rating-option:hover {
+            transform: scale(1.2);
+        }
+
+        .file-input {
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="wrapper header-container">
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Quality Education Logo">
+                <h1>Quality Education</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Programs</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html" class="active">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="wrapper">
+            <div class="feedback-container">
+                <h1>Share Your Feedback</h1>
+                <p>We value your input to help us improve our educational programs and initiatives. Please take a moment
+                    to share your thoughts with us.</p>
+
+                <form class="feedback-form">
+                    <!-- Personal Details Fieldset -->
+                    <fieldset>
+                        <legend>Personal Details</legend>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                title="Please enter your full name">
+                            <div class="error-message">Please enter your full name</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                title="Please enter a valid email address">
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telephone Number</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}"
+                                title="Please enter a valid phone number (10-15 digits)">
+                            <div class="error-message">Please enter a valid phone number (10-15 digits)</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="3"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- Feedback Details Fieldset -->
+                    <fieldset>
+                        <legend>Feedback Details</legend>
+
+                        <div class="form-group">
+                            <label for="feedbackType">Type of Feedback</label>
+                            <select id="feedbackType" name="feedbackType" required>
+                                <option value="">Please select...</option>
+                                <option value="program">Program Feedback</option>
+                                <option value="volunteer">Volunteer Experience</option>
+                                <option value="website">Website Feedback</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message">Please select a feedback type</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program">Program (if applicable)</label>
+                            <input list="programs" id="program" name="program">
+                            <datalist id="programs">
+                                <option value="Global Literacy Initiative">
+                                <option value="Digital Classroom Project">
+                                <option value="Early Childhood Development">
+                                <option value="Teacher Excellence Program">
+                                <option value="STEM Education Initiative">
+                                <option value="Adult Literacy Campaign">
+                                <option value="Inclusive Education Project">
+                                <option value="Higher Education Access">
+                            </datalist>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Areas to Improve (select all that apply)</label>
+                            <div class="scrolling-list">
+                                <label><input type="checkbox" name="improvements" value="content"> Educational
+                                    Content</label>
+                                <label><input type="checkbox" name="improvements" value="teaching"> Teaching
+                                    Methods</label>
+                                <label><input type="checkbox" name="improvements" value="materials"> Learning
+                                    Materials</label>
+                                <label><input type="checkbox" name="improvements" value="technology"> Technology
+                                    Integration</label>
+                                <label><input type="checkbox" name="improvements" value="accessibility">
+                                    Accessibility</label>
+                                <label><input type="checkbox" name="improvements" value="communication">
+                                    Communication</label>
+                                <label><input type="checkbox" name="improvements" value="support"> Support
+                                    Services</label>
+                                <label><input type="checkbox" name="improvements" value="scheduling"> Program
+                                    Scheduling</label>
+                                <label><input type="checkbox" name="improvements" value="facilities"> Facilities</label>
+                                <label><input type="checkbox" name="improvements" value="other"> Other</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>How did you hear about us?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="source" value="social"> Social Media</label>
+                                <label><input type="radio" name="source" value="search"> Search Engine</label>
+                                <label><input type="radio" name="source" value="friend"> Friend or Colleague</label>
+                                <label><input type="radio" name="source" value="event"> Event or Conference</label>
+                                <label><input type="radio" name="source" value="other"> Other</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedbackDate">Date of Experience</label>
+                            <input type="date" id="feedbackDate" name="feedbackDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="scheduledTime">Preferred Follow-up Time</label>
+                            <input type="datetime-local" id="scheduledTime" name="scheduledTime">
+                        </div>
+
+                        <div class="form-group">
+                            <label>How would you rate your overall experience?</label>
+                            <div class="rating-container">
+                                <span class="rating-option" title="Very Dissatisfied">😡</span>
+                                <span class="rating-option" title="Dissatisfied">😔</span>
+                                <span class="rating-option" title="Neutral">😐</span>
+                                <span class="rating-option" title="Satisfied">🙂</span>
+                                <span class="rating-option" title="Very Satisfied">😍</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" name="comments" rows="5" maxlength="500" required></textarea>
+                            <div class="counter">500 characters remaining</div>
+                            <div class="error-message">Please provide your feedback</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attachments">Attachments (if any)</label>
+                            <input type="file" id="attachments" name="attachments" class="file-input">
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrapper footer-container">
+            <p>&copy; 2025 Quality Education. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Editor ST1</a>
+                <a href="pageEditor_ST2.html">Editor ST2</a>
+                <a href="pageEditor_ST3.html">Editor ST3</a>
+                <a href="pageEditor_ST4.html">Editor ST4</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
